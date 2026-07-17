@@ -49,7 +49,7 @@ if "이용량" in analysis:
     heat = [[r["위도"], r["경도"], r["총이용건수"]] for _, r in view.iterrows()]
     HeatMap(heat, radius=18, blur=14, min_opacity=0.3,
             gradient={0.2:"blue",0.5:"cyan",0.7:"yellow",1.0:"red"}).add_to(m)
-    st.subheader("🔥 이용량 분포")
+    st.subheader("🔥 이용량")
     st.caption("어느 동네가 따릉이를 가장 많이 이용하나")
     st_folium(m, width=900, height=500)
     st.dataframe(view[["자치구","대여소명","대여건수","반납건수","총이용건수"]]
